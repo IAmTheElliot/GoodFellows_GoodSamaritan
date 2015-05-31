@@ -1,0 +1,14 @@
+{
+  "name": "good_samaritan",
+  "version": "0.0.1",
+  "description": "Beta test for the GoodFellows Good Samaritan web app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elliot Simpson, Hollis Lau, Kalani Aldrich",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}

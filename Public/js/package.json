@@ -1,0 +1,14 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "description": "GoodFellows beta for the Good Samaritan web program",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elliot Sipson, Hollis Lau, Kalani Aldrich",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
