@@ -11,9 +11,12 @@ var $newCity
 var $newState
 var $newZipCode
 
-$('#new-user-form').on('keypress', function(){
+// $('#new-user-form').on('keypress', function(){
 //   console.log("blur from jquery works");
 //   console.log($newUserEmail);
+// });
+
+$('#submit-account-data').on('click', function(){
   $newEmail = $('#new-email').val();
   $newPassword1 = $('#new-password1').val();
   $newPassword2 = $('#new-password2').val();
@@ -23,9 +26,7 @@ $('#new-user-form').on('keypress', function(){
   $newCity = $('#new-city').val();
   $newState = $('#new-state :selected').val();
   $newZipCode = $('#new-zipcode').val();
-});
 
-$('#test-button').on('click', function(){
   console.log("test button is clicked!");
   console.log("email: " + $newEmail)
   console.log("password: " + $newPassword1)
