@@ -30,7 +30,6 @@ $(function() {
     }, user.signIn($('#new-email').val(), $('#new-password1').val()));
   };
 
-
   User.prototype.signIn = function(email, password) {
     var userDataRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User");
 
@@ -73,8 +72,5 @@ $(function() {
   // })
 
   $('#new-user-form').on('submit', user.createAccount);
-
-  // $('#CREATENEWREQUESTNAMEHERE').on('submit', user.createRequest);
-  $('#test-button').on('click', Request.createRequest);
 
 });
