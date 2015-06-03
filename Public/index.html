@@ -4,10 +4,10 @@
     <title>The Good Samaritan</title>
     <meta charset="utf-8">
     <meta name="description" content="Sign in to Good Samaritan">
-    <!-- <link href="css/960.css" type="text/css" rel="stylesheet" /> -->
-    <!-- <link href="css/LiquidLayout.css" type="text/css" rel="stylesheet" /> -->
-    <!-- <link href="css/styles.css" type="text/css" rel="stylesheet" /> -->
-    <link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="css/960.css" type="text/css" rel="stylesheet">
+    <link href="css/LiquidLayout.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
@@ -23,9 +23,10 @@
       </div>
       <div class="article column2">
         <form action="#" method="post" onsubmit="return false">
-          <input id="user-email" type="user-email" name="user-email" placeholder="Enter your email" required="required"><br>
+          <input id="user-email" type="email" name="user-email" placeholder="Enter your email" required="required"><br>
           <input id="password" type="password" name="password" placeholder="Password" required="required">
           <input id="sign-in" type="submit" class="styled-button-7" value="Submit">
+          <p id="invalid"></p>
           <p>Create account</p>
         </form>
       </div>
