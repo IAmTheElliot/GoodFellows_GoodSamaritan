@@ -1,6 +1,6 @@
 $(function() {
 
-  function User() {
+  function userProfile() {
     this.email = "";
     this.password = "";
     this.firstName = "";
@@ -12,10 +12,22 @@ $(function() {
     this.key = "";
   }
 
-  var user = new User();
+// Fetches values from newuser.html and pushe them to Firebase to create a new user account
+  var user = new UserProfile();
+
 
   User.prototype.createAccount = function() {
-
+    var newUserURL = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
+    newUserURL.push({
+      email: $('#new-email').val(),
+      password: $('#new-password1').val(),
+      firstName: $('#new-firstname').val(),
+      lastName: $('#new-lastname').val(),
+      phoneNumber: $('#new-phonenumber').val(),
+      city: $('#new-city').val(),
+      state: $('#new-state :selected').val(),
+      zip: $('#new-zipcode').val()
+    }, user.signIn($('#new-email').val(), $('#new-password1').val()));
   };
 
   User.prototype.signIn = function(email, password) {
@@ -45,7 +57,6 @@ $(function() {
   $("#sign-in").on("click", function() {
     var email = $("#user-email").val();
     var password = $("#password").val();
-
     user.signIn(email, password);
   })
 
@@ -59,5 +70,7 @@ $(function() {
   //   $("input#user-email").val("");
   //   $("input#password").val("");
   // })
+
+  $('#new-user-form').on('submit', user.createAccount);
 
 });
