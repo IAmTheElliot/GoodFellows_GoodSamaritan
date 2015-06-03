@@ -3,6 +3,18 @@ body {
   background-repeat: no-repeat;
   width: 90%;
   margin: 0 auto;}
+
+h1 {
+  color: black;
+  padding-top: 5px;
+  padding-right: 550px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  text-align: right;
+}
 #content {overflow: auto;}
 
 #nav. #feature. #footer {
@@ -23,18 +35,6 @@ li {
 #feature, .article {
     height: 10em;
     margin-bottom: 1em;}
-}
-
-h1 {
-  color: black;
-  padding-top: 5px;
-  padding-right: 550px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 20px;
-  font-family: 'Lobster', cursive;
-  font-size: 20px;
-  text-align: right;
 }
 
 #navbar {
