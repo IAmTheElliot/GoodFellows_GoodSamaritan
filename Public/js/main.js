@@ -10,7 +10,7 @@ $(function() {
 
 
   function Request() {
-    this.requestorID = "";
+    this.requestorId = "";
     this.description = "";
     this.isActive = "";
     this.date = "";
@@ -19,8 +19,6 @@ $(function() {
   var userRequest = new Request();
 
   var userObj = JSON.parse(sessionStorage.getItem("userStorage"));
-
-  var userRequest = new Request();
 
   Request.prototype.renderRequestInfo = function() {
     var requestRef = new Firebase("https://good-samaritan-cf.firebaseio.com/Request");
@@ -35,9 +33,15 @@ $(function() {
         var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + activeRequest.key);
 
         userRef.on("value", function(userSnapshot) {
-          $("#other-feed").prepend("<h4 class=" + requestSnapshot.key() + ">" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
-            "</h4><p class=" + requestSnapshot.key() + ">" + activeRequest.description +
-            "</p><button class=" + requestSnapshot.key() + " name=" + activeRequest.key + ">Respond</button>");
+          $("#other-feed").prepend("<h4>" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
+            "</h4><p>" + activeRequest.description +
+            "</p><button id=" + requestSnapshot.key() + " name=" + activeRequest.key + ">Respond</button>");
+
+          // create event listener
+          $('#' + requestSnapshot.key()).on('click', function() {
+            console.log('the button works for ' + requestSnapshot.key());
+            userRequest.respondRequest(activeRequest.key);
+          })
         })
       }
     })
@@ -54,11 +58,26 @@ $(function() {
     newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
     newUserRequest.push({
       key: userObj.key,
-      description: "$('#requestorIDhere').val()",
+      description: $('textarea#request-text').val(),
       isActive: true,
       date: event.timeStamp
-    }, console.log("createRequest has been pushed to firebase"))
+    }, function(){
+    console.log("createRequest has been pushed to firebase"),
+      $('textarea#request-text').val("");
+    console.log(userObj.key);
+    })
   };
+
+  $('#new-request-button').on('click', function(e) {
+    if ($('textarea#request-text').val() == "" ) {
+      e.preventDefault();
+      console.log("Please enter your help request details!");
+    } else {
+      e.preventDefault();
+      console.log("make request is pressed");
+      userRequest.createRequest();
+    }
+  });
 
 // saved sample code for using moment() to return timestamp to viewable date
 /*  $('#test-button').on('click', function(){
@@ -70,29 +89,37 @@ $(function() {
   })
 */
 
-  Request.prototype.respondRequest = function() {
-    console.log("the respondRequest prototype is called");
-    var temp = userRequest.requestorID;
-    console.log(userRequest.requestorID);
-    console.log("the ID is: " + temp);
+  Request.prototype.respondRequest = function(key) {
+    console.log("the respondRequest prototype has been called");
+    console.log("the ID is: " + key);
 
     var userDataRef = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
-    userDataRef.orderByChild("key").equalTo(userRequest.requestorID).on("child_added", function(snapshot){
-      var userObj = snapshot.val();
-      console.log(userObj);
+    userDataRef.child(key).on("value", function(snapshot){
+      console.log(snapshot.val());
+      var showRequestorInfo = snapshot.val();
+      console.log("this line is executing");
+      //HTML elements to display the object(requestors) info
+      if (showRequestorInfo.firstName != "") {
+        $('#requestor-name').text(showRequestorInfo.firstName + snapshot.lastName);
+      }
+      if (showRequestorInfo.phoneNumber != "") {
+        $('#requestor-phone').text(showRequestorInfo.phoneNumber);
+      }
+      if (showRequestorInfo.email != "") {
+        $('#requestor-email').text(showRequestorInfo.email);
+      }
+      if (showRequestorInfo.city != "") {
+        $('#requestor-location').text(showRequestorInfo.city)
+      }
+      if (showRequestorInfo.state != "") {
+        $('#requestor-location').append(" " + showRequestorInfo.state)
+      }
+      if (showRequestorInfo.zip != "") {
+        $('#requestor-location').append(", " + showRequestorInfo.zip);
+      }
+         // + " " + snapshot.state + ", " + snapshot.zip);
     });
   };
-
-  // change jQuery to button CLASS search instead of by Id
-  $('.button').on('click', function() {
-    // console.log("the contact info button works!");
-    userRequest.requestorID = this.name;
-    console.log("this.name is: " + this.name);
-    console.log("the requestor key is: " + userRequest.requestorID);
-    userRequest.respondRequest();
-  })
-
-
 
   Request.prototype.deactivateRequest = function() {
 
@@ -101,7 +128,7 @@ $(function() {
   renderUserInfo();
   userRequest.renderRequestInfo();
 
-  userRequest.respondRequest();
+
 
 
 
