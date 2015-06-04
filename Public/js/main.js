@@ -8,6 +8,7 @@ $(function() {
       $("#phone-number").append(userObj.phoneNumber);
   };
 
+
   function Request() {
     this.requestorID = "";
     this.description = "";
@@ -28,11 +29,11 @@ $(function() {
       var activeRequest = snapshot.val();
 
       if (activeRequest.key === userObj.key) {
-        $("#user-feed").prepend("<p class=" + snapshot.key() + ">" + activeRequest.description + 
+        $("#user-feed").prepend("<p class=" + snapshot.key() + ">" + activeRequest.description +
           "</p><button class=" + snapshot.key() + " name=" + userObj.key + ">Deactivate</button>");
       } else {
         var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + activeRequest.key);
-        
+
         userRef.on("value", function(snapshot) {
           $("#other-feed").prepend("<h4 class=" + snapshot.key() + ">" + snapshot.val().firstName + " " + snapshot.val().lastName +
             "</h4><p class=" + snapshot.key() + ">" + activeRequest.description +
@@ -52,7 +53,7 @@ $(function() {
   Request.prototype.createRequest = function() {
     newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
     newUserRequest.push({
-      requestorId: "test id goes here",
+      key: userObj.key,
       description: "$('#requestorIDhere').val()",
       isActive: true,
       date: event.timeStamp
@@ -70,8 +71,28 @@ $(function() {
 */
 
   Request.prototype.respondRequest = function() {
-    
+    console.log("the respondRequest prototype is called");
+    var temp = userRequest.requestorID;
+    console.log(userRequest.requestorID);
+    console.log("the ID is: " + temp);
+
+    var userDataRef = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
+    userDataRef.orderByChild("key").equalTo(userRequest.requestorID).on("child_added", function(snapshot){
+      var userObj = snapshot.val();
+      console.log(userObj);
+    });
   };
+
+  // change jQuery to button CLASS search instead of by Id
+  $('.button').on('click', function() {
+    // console.log("the contact info button works!");
+    userRequest.requestorID = this.name;
+    console.log("this.name is: " + this.name);
+    console.log("the requestor key is: " + userRequest.requestorID);
+    userRequest.respondRequest();
+  })
+
+
 
   Request.prototype.deactivateRequest = function() {
 
