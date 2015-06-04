@@ -22,19 +22,19 @@ $(function() {
   Request.prototype.renderRequestInfo = function() {
     var requestRef = new Firebase("https://good-samaritan-cf.firebaseio.com/Request");
 
-    requestRef.orderByChild("isActive").equalTo(true).on("child_added", function(snapshot) {
-      var activeRequest = snapshot.val();
+    requestRef.orderByChild("isActive").equalTo(true).on("child_added", function(requestSnapshot) {
+      var activeRequest = requestSnapshot.val();
 
       if (activeRequest.key === userObj.key) {
-        $("#user-feed").prepend("<p class=" + snapshot.key() + ">" + activeRequest.description + 
-          "</p><button class=" + snapshot.key() + " name=" + userObj.key + ">Deactivate</button>");
+        $("#user-feed").prepend("<p class=" + requestSnapshot.key() + ">" + activeRequest.description +
+          "</p><button class=" + requestSnapshot.key() + " name=" + userObj.key + ">Deactivate</button>");
       } else {
         var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + activeRequest.key);
-        
-        userRef.on("value", function(snapshot) {
-          $("#other-feed").prepend("<h4 class=" + snapshot.key() + ">" + snapshot.val().firstName + " " + snapshot.val().lastName +
-            "</h4><p class=" + snapshot.key() + ">" + activeRequest.description +
-            "</p><button class=" + snapshot.key() + " name=" + activeRequest.key + ">Respond</button>");
+
+        userRef.on("value", function(userSnapshot) {
+          $("#other-feed").prepend("<h4 class=" + requestSnapshot.key() + ">" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
+            "</h4><p class=" + requestSnapshot.key() + ">" + activeRequest.description +
+            "</p><button class=" + requestSnapshot.key() + " name=" + activeRequest.key + ">Respond</button>");
         })
       }
     })
