@@ -99,7 +99,7 @@ $(function() {
       var showRequestorInfo = snapshot.val();
       console.log("this line is executing");
       //HTML elements to display the object(requestors) info
-      if (showRequestorInfo.firtName != "") {
+      if (showRequestorInfo.firstName != "") {
         $('#requestor-name').text(showRequestorInfo.firstName + snapshot.lastName);
       }
       if (showRequestorInfo.phoneNumber != "") {
