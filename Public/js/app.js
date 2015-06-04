@@ -1,6 +1,6 @@
 $(function() {
 
-  function userProfile() {
+  function UserProfile() {
     this.email = "";
     this.password = "";
     this.firstName = "";
@@ -12,11 +12,11 @@ $(function() {
     this.key = "";
   }
 
-// Fetches values from newuser.html and pushe them to Firebase to create a new user account
+// Fetches values from newuser.html and pushes them to Firebase to create a new user account
   var user = new UserProfile();
 
 
-  User.prototype.createAccount = function() {
+  UserProfile.prototype.createAccount = function() {
     var newUserURL = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
     newUserURL.push({
       email: $('#new-email').val(),
@@ -30,7 +30,7 @@ $(function() {
     }, user.signIn($('#new-email').val(), $('#new-password1').val()));
   };
 
-  User.prototype.signIn = function(email, password) {
+  UserProfile.prototype.signIn = function(email, password) {
     var userDataRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User");
 
     // userDataRef.child("email").on("child_added", function(snapshot) {
@@ -58,6 +58,7 @@ $(function() {
     var email = $("#user-email").val();
     var password = $("#password").val();
     user.signIn(email, password);
+    console.log("submit is working");
   })
 
   $("#password").on("focus", function() {
