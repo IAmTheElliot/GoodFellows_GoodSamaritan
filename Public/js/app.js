@@ -62,7 +62,6 @@ $(function() {
 
   $("input#user-email").on("focus", function() {
     $("#invalid").text("");
-    $("#user-email").val("");
     $("#password").val("");
   })
 
