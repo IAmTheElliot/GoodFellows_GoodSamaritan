@@ -8,12 +8,15 @@ $(function() {
       $("#phone-number").append(userObj.phoneNumber);
   };
 
+
   function Request() {
     this.requestorID = "";
     this.description = "";
     this.isActive = "";
     this.date = "";
-  }
+  };
+
+  var userRequest = new Request();
 
   var userObj = JSON.parse(sessionStorage.getItem("userStorage"));
 
@@ -50,7 +53,7 @@ $(function() {
   Request.prototype.createRequest = function() {
     newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
     newUserRequest.push({
-      requestorId: "test id goes here",
+      key: userObj.key,
       description: "$('#requestorIDhere').val()",
       isActive: true,
       date: event.timeStamp
@@ -68,8 +71,28 @@ $(function() {
 */
 
   Request.prototype.respondRequest = function() {
+    console.log("the respondRequest prototype is called");
+    var temp = userRequest.requestorID;
+    console.log(userRequest.requestorID);
+    console.log("the ID is: " + temp);
 
+    var userDataRef = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
+    userDataRef.orderByChild("key").equalTo(userRequest.requestorID).on("child_added", function(snapshot){
+      var userObj = snapshot.val();
+      console.log(userObj);
+    });
   };
+
+  // change jQuery to button CLASS search instead of by Id
+  $('.button').on('click', function() {
+    // console.log("the contact info button works!");
+    userRequest.requestorID = this.name;
+    console.log("this.name is: " + this.name);
+    console.log("the requestor key is: " + userRequest.requestorID);
+    userRequest.respondRequest();
+  })
+
+
 
   Request.prototype.deactivateRequest = function() {
 
@@ -77,5 +100,9 @@ $(function() {
 
   renderUserInfo();
   userRequest.renderRequestInfo();
+
+  userRequest.respondRequest();
+
+
 
 });
