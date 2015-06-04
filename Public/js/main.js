@@ -20,8 +20,6 @@ $(function() {
 
   var userObj = JSON.parse(sessionStorage.getItem("userStorage"));
 
-  var userRequest = new Request();
-
   Request.prototype.renderRequestInfo = function() {
     var requestRef = new Firebase("https://good-samaritan-cf.firebaseio.com/Request");
 
@@ -54,11 +52,26 @@ $(function() {
     newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
     newUserRequest.push({
       key: userObj.key,
-      description: "$('#requestorIDhere').val()",
+      description: $('textarea#request-text').val(),
       isActive: true,
       date: event.timeStamp
-    }, console.log("createRequest has been pushed to firebase"))
+    }, function(){
+    console.log("createRequest has been pushed to firebase"),
+      $('textarea#request-text').val("");
+    console.log(userObj.key);
+    })
   };
+
+  $('#new-request-button').on('click', function(e) {
+    if ($('textarea#request-text').val() == "" ) {
+      e.preventDefault();
+      console.log("Please enter your help request details!");
+    } else {
+      e.preventDefault();
+      console.log("make request is pressed");
+      userRequest.createRequest();
+    }
+  });
 
 // saved sample code for using moment() to return timestamp to viewable date
 /*  $('#test-button').on('click', function(){
