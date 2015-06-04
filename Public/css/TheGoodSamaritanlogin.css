@@ -26,7 +26,7 @@ input {
 	border: 1px solid #665544;
 	color: #000000;}
 
-input[type=userEmail]{
+input[type=user-email]{
   background: linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
   border-radius: 5px;
   border: none;

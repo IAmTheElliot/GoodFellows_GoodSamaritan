@@ -7,8 +7,6 @@
     <meta name="robots" content="noindex">
     <meta http-equiv="author" content="goodFellows">
     <link href="css/960.css" type="text/css" rel="stylesheet">
-    <link href="css/LiquidLayout.css" type="text/css" rel="stylesheet">
-    <link href="css/TheGoodSamaritanlogin.css" type="text/css" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
@@ -16,22 +14,26 @@
     <script src="js/newUser.js"></script>
   </head>
   <body>
-    <article class="container_12 clearfix">
-      <div id="header" class="grid_12">
-      <h1>goodSam</h1>
-    </article>
-      <div class="article column1">
-        <p></p>
+    <div id="header">
+      <div id="navbar">
+        <h2>goodSam<h2>
       </div>
-      <div class="article column2">
+    </div>
+    <article class="container_12 clearfix">
+      <div class="article-column1">
+        <p>Join goodSam Today.</p>
+      </div>
+      <div class="column2">
         <form action="" method="post" name="new-user-form" id="new-user-form" onsubmit="return false">
-          <input type="email" name="new-email" id="new-email" placeholder="Enter your email" required="requied">
-          <input type="password" name="new-password1" id="new-password1" placeholder="Enter Password" autocomplete = "off">
-          <input type="password" name="new-password2" id="new-password2" placeholder="Confirm Password"  autocomplete = "off">
-          <input type="text" name="new-firstname" id="new-firstname" placeholder="Enter First Name">
-          <input type="text" name="new-lastname" id="new-lastname" placeholder="Enter Last Name">
-          <input type="tel" name="new-phonenumber" id="new-phonenumber" placeholder="Phone" maxlength="10">
-          <input type="text" name="new-city" id="new-city" placeholder="City">
+          <div class="inputboxes">
+            <input type="email" name="new-email" id="new-email" placeholder="Enter your email" required="requied">
+            <input type="password" name="new-password1" id="new-password1" placeholder="Enter Password" autocomplete = "off">
+            <input type="password" name="new-password2" id="new-password2" placeholder="Confirm Password"  autocomplete = "off">
+            <input type="text" name="new-firstname" id="new-firstname" placeholder="Enter First Name">
+            <input type="text" name="new-lastname" id="new-lastname" placeholder="Enter Last Name">
+            <input type="tel" name="new-phonenumber" id="new-phonenumber" placeholder="Phone" maxlength="10">
+            <input type="text" name="new-city" id="new-city" placeholder="City">
+          </div>
           <select name="new-state" id="new-state" required="required">
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -85,13 +87,12 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
-          <input type="text" name ="new-zipcode" id="new-zipcode" placeholder="Zip" required="required" maxlength="5">
-          <input type="submit" id="submit-account-data" class="submit-account-data" value="Create Account">
+          <input type="zip" name ="new-zipcode" id="new-zipcode" placeholder="Zip" required="required" maxlength="5">
+          <input id="submit-account-data" type="submit" class="styled-button-8" value="Create Account">
         </form>
       </div>
+    </article>
       <div class="article column3">
-          <button id="test-button">test</button>
-        <p></p>
       </div>
   </body>
 </html>

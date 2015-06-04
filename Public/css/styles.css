@@ -1,20 +1,156 @@
 body {
-  background-image:linear-gradient(to bottom, #8dd2d9 , #58c0c7);
+  background-image:linear-gradient(to bottom, #58c0c7 , #0099CC);
   background-repeat: no-repeat;
-  width: 90%;
+  height: 700px;
   margin: 0 auto;}
 
 h1 {
-  color: black;
-  padding-top: 5px;
-  padding-right: 550px;
+  color: white;
+  padding-top: 200px;
+  padding-right: 170px;
+  padding-bottom: 0px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   margin-left: 20px;
   font-family: 'Lobster', cursive;
-  font-size: 20px;
+  font-size: 150px;
   text-align: right;
 }
+
+.whitespace1 {
+  width: 400px;
+  height: 160px;
+  border-radius: 3px;
+  margin-top: 0px;
+  background-color: white;
+  display: inline-block;
+  padding: 10px;
+}
+
+.signup {
+  padding-top: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+input[type=email]{
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    border-radius: 3px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 350px; 
+    background: #FFFFFF; 
+} 
+
+input[type=password]{
+    margin-left: 15px; 
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 350px; 
+    background: #FFFFFF; 
+}
+
+input[type=text]{
+    margin-left: 15px; 
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 200px; 
+    background: #FFFFFF; 
+} 
+
+input[type=tel]{
+    margin-left: 15px; 
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 200px; 
+    background: #FFFFFF; 
+} 
+
+input[type=zip]{
+    margin-left: 15px; 
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 200px; 
+    background: #FFFFFF; 
+} 
+.styled-button-7 {
+  background: #FF5DB1;
+  background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF5DB1),color-stop(100%,#E94A86));
+  background: -webkit-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -o-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -ms-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5DB1', endColorstr='#E94A86',GradientType=0);
+  color:#fff;
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:16px;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border:1px solid #E8124F;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-left: 110px;
+  margin-top: 3px;
+}
+.styled-button-8 {
+  background: #FF5DB1;
+  background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF5DB1),color-stop(100%,#E94A86));
+  background: -webkit-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -o-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -ms-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5DB1', endColorstr='#E94A86',GradientType=0);
+  padding:5px 7px;
+  color:#fff;
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:16px;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border:1px solid #E8124F;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-left: 40px;
+  margin-top: 3px;
+}
+
+#invalid {
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+}
+
 #content {overflow: auto;}
 
 #nav. #feature. #footer {
@@ -30,24 +166,20 @@ h1 {
 li {
     display: inline;
     padding: 0.5em;}
+
 #nav, #footer {
     padding: 0.5em 0;}
+
 #feature, .article {
     height: 10em;
     margin-bottom: 1em;}
-}
 
 #navbar {
-  color: black;
   background: #fcfcfc;
-  width: 100%;
-  border-radius: 3px;
-  float: left;
   margin: 0 0 3em 0px;
-  padding: 0;
   list-style: none;
-  border-bottom: 1px solid #ccc; 
-  border-top: 1px solid #ccc; 
+  border-bottom: 1px solid #fcfcfc; 
+  border-top: 1px solid #fcfcfc; 
   font-family: 'Roboto', sans-serif;
 }
 #navbar li {
@@ -168,30 +300,46 @@ float: left;
     display: none;
   }
 }
-form {
-  width: 600px;
-  border-radius: 3px;
-  background-color: white;
-  display: inline-block;
+
+h2 {
+  color: #58c0c7;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  text-align: center;
 }
-input, textarea {
-    margin-left: 15px; 
+
+p {
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-size: 45px;
+  color: #0099CC;
+}
+
+#new-state {
+    border: 1px solid #ccc;
+    width: 150px;
+    margin-left: 150px;
     border-radius: 3px;
-    padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 200px; 
-    background: #FFFFFF; 
-    } 
-   
-textarea { 
-    width: 550px; 
-    max-width: 550px; 
-    height: 90px; 
-    line-height: 150%; 
-    } 
-   
+    overflow: hidden;
+    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+#new-state select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+#new-state select:focus {
+    outline: none;
+}
+
 input:hover, textarea:hover, 
 input:focus, textarea:focus { 
     border-color: #C9C9C9; 
@@ -213,3 +361,28 @@ input:focus, textarea:focus {
     font-size: 14px; 
     color: #FFFFFF; 
     }
+/*
+input, textarea {
+    margin-left: 15px; 
+    border-radius: 3px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 200px; 
+    background: #FFFFFF; 
+    } 
+   
+textarea { 
+    width: 550px; 
+    max-width: 550px; 
+    height: 90px; 
+    line-height: 150%; 
+    } 
+
+article {
+  background: white;
+  border-radius: 5px;
+  border: none;
+  height: 500px;
+}

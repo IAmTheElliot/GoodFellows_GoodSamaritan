@@ -16,7 +16,9 @@ $(function() {
     this.description = "";
     this.isActive = "";
     this.date = "";
-  }
+  };
+
+  var userRequest = new Request();
 
   Request.prototype.renderRequestInfo = function() {
 
@@ -27,14 +29,19 @@ $(function() {
   };
 
   Request.prototype.respondRequest = function() {
-
+    
   };
 
   Request.prototype.deactivateRequest = function() {
 
   };
 
+  var requestRef = new Firebase("https://good-samaritan-cf.firebaseio.com/Request");
 
   renderUserInfo();
+
+  userRequest.respondRequest();
+
+
 
 });
