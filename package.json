@@ -9,6 +9,7 @@
   "author": "Elliot Simpson, Hollis Lau, Kalani Aldrich",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "moment": "^2.10.3"
   }
 }
