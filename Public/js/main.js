@@ -13,7 +13,9 @@ $(function() {
     this.description = "";
     this.isActive = "";
     this.date = "";
-  }
+  };
+
+  var userRequest = new Request();
 
   var userObj = JSON.parse(sessionStorage.getItem("userStorage"));
 
@@ -68,7 +70,7 @@ $(function() {
 */
 
   Request.prototype.respondRequest = function() {
-
+    
   };
 
   Request.prototype.deactivateRequest = function() {
@@ -77,5 +79,9 @@ $(function() {
 
   renderUserInfo();
   userRequest.renderRequestInfo();
+
+  userRequest.respondRequest();
+
+
 
 });
