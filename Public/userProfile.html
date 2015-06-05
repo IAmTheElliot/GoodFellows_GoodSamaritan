@@ -8,78 +8,50 @@
     <meta http-equiv="author" content="goodFellows">
     <link href="css/960.css" type="text/css" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href=" http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <script src=" https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body>
-    <h1>goodSam</h1>
-    <div class="container_12 clearfix">
-      <div id="header">
-        <div id="navbar">
-          <ul>
-            <li class='active'><a href='#'><span>Home</span></a></li>
-            <li><a href='#'><span>About</span></a></li>
-            <li><a href='#'><span>Contact</span></a></li>
-            <li class='last'><a href='#'><span></span></a></li>
-          </ul>
-        </div>
+  <body id="Newuser">
+    <div id="header">
+      <div id="navbar">
+        <h2>goodSam<h2>
+        <a id='log-out' href='index.html'><span>Log-out</span></a>
       </div>
     </div>
-    <section>
-      <div id="profilepic">
-      <div id="newrequest">
-        <form class="form">
-          <p class="text"><textarea name="text" id="request-text"placeholder="What do you need help with?"></textarea></p>
-          <p class="submit"><input type="submit" value="Request" id="new-request-button"/></p>
-        </form>
-      </div>
-    </section>
-    <section>
-      <div id="currentrequest">
-      </div>
-    </section>
-    <section>
+    <section class="container_12 clearfix">
+      <article class="grid_12">
+        <section>
+          <div class="userinfo">
+            <ul>
+              <li><h1 id="first-name"></h1></li>
+              <li id="location">Location: </li>
+              <li id="email">Email: </li>
+              <li id="phone-number">Phone: </li>
+            </ul>
+        </div>
+        </section>
+        <form id="new-request-form" class="form">
+        <div class="text">
+          <textarea id="request-text" name="text" placeholder="What do you need help with?"></textarea>
+          <p id="request-message"></p>
+        </div>
+        <div class="request">
+          <input id="new-request-button" type="submit" value="Request">
+        </div>
+      </form>
+      </article>
+      <h2>User Feed</h2>
+      <div id="user-feed"></div>
+      <h2>Other Feed</h2>
+      <div id="main-feed"></div>
       <div id="allrequest">
       </div>
+    <p id="requestor-name"></p>
+    <p id="requestor-email"></p>
+    <p id="requestor-phone"></p>
+    <p id="requestor-location"></p>
     </section>
-    <div id="content">
-      <div id="feature">
-        <p>Feature</p>
-        <button name="skdfjlskdjfslkj" id="button-contact-info">Click to get requestor info!</button>
-      </div>
-      <div class="article column1">
-        <h1 id="first-name"></h1>
-        <p id="location">Location: </p>
-        <p id="email">Email: </p>
-        <p id="phone-number">Phone: </p>
-      </div>
-      <div class="article column2">
-        <p>Column Two</p>
-        <h2>User Feed</h2>
-        <div id="user-feed">
-        </div>
-        <h2>Other Feed</h2>
-        <div id="other-feed">
-        </div>
-      </div>
-      <div class="article column3">
-        <p>Column Three</p>
-        <p id="requestor-name"></p>
-        <p id="requestor-phone"></p>
-        <p id="requestor-email"></p>
-        <p id="requestor-location"></p>
-      </div>
-    </div>
-    <div id="footer">
-      <p>&copy; Copyright 2015</p>
-    </div>
-  </body>
-    <p></p>
-    </h1>
-    <h2>
-    <p>
-    </h2>
   </body>
 </html>
