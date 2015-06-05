@@ -12,9 +12,6 @@ $(function() {
   // Renders fetched user data to the page
   goodSam.prototype.renderUser = function() {
     $("#first-name").text("Welcome, " + userData.firstName + "!");
-    $("#location").append(userData.city + ", " + userData.state);
-    $("#email").append(userData.email);
-    $("#phone-number").append(userData.phoneNumber);
   };
 
   // Renders info from requests fetched from the database to separate feeds on the page
@@ -138,3 +135,4 @@ $(function() {
   });
 
 });
+

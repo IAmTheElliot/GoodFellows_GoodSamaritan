@@ -1,0 +1,3 @@
+The Good Samaritan "goodSam" Web Application
+
+Good Samaritan is an application that puts users in contact with one another to resolve their issues or problems. The requestor submits an issue to the database, which is then populated in the application request feed of other users. Another user who wishes to provide assistance may then respond by selecting the issue from their feed. Once clicked, the application will return the contact information of the requestor, and the responder may initiate contact via email or phone. Once the issue has been successfully resolved, the requestor may then deactivate the request from their own request feed. All request feeds are automatically updated when a new request is submitted or when an active one is deactivated.
