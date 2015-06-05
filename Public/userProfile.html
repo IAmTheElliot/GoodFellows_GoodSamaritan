@@ -17,10 +17,9 @@
     <div id="header">
       <div id="navbar">
         <h2>goodSam<h2>
-        <!--
-        <a id='log-out' href='index.html'><span>Log-out</span></a>-->
+        <a id='log-out' href='index.html'><span>Log-out</span></a>
       </div>
-    </div>     
+    </div>
     <section class="container_12 clearfix">
       <section>
         <div class="userinfo">
@@ -36,17 +35,21 @@
           <input id="new-request-button" type="submit" value="Request">
         </div>
       </form>
-      </article>
-      <h2>User Feed</h2>
-      <div id="user-feed"></div>
-      <h2>Other Feed</h2>
-      <div id="main-feed"></div>
-      <div id="allrequest">
-      </div>
-    <p id="requestor-name"></p>
-    <p id="requestor-email"></p>
-    <p id="requestor-phone"></p>
-    <p id="requestor-location"></p>
+      <section class="feed">
+        <h2 class="feed-title">Your Requests</h2>
+        <div id="user-feed"></div>
+        <h2 class="feed-title">Respond To A Request</h2>
+        <div id="main-feed"></div>
+      </section>
+      <section class="contact-info">
+        <h2>Requestor Contact Information</h2>
+        <div id="allrequest">
+          <p id="requestor-name"></p>
+          <p id="requestor-email"></p>
+          <p id="requestor-phone"></p>
+          <p id="requestor-location"></p>
+        </div>
+      </section>
     </section>
   </body>
 </html>

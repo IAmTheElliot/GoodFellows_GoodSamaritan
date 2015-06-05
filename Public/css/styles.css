@@ -3,7 +3,7 @@
   height: 600px;
   margin: 0 auto;
   background-image:linear-gradient(to bottom, #58c0c7 , #0099CC);
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 #Newuser{
@@ -11,7 +11,7 @@
   height: 100%;
   margin: 0 auto;
   background-image:linear-gradient(to bottom, #58c0c7 , #0099CC);
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -45,9 +45,9 @@ h1 {
 #new-request-form {
   background-color: white;
   border-radius: 3px;
-  width: 940px; 
+  width: 940px;
   height: 230px;
-  margin-top: 150px; 
+  margin-top: 150px;
 }
 #new-user-form {
   width: 500px;
@@ -83,18 +83,18 @@ input[type=password]{
 }
 
 input[id="new-city"]{
-    margin-left: 15px; 
+    margin-left: 15px;
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 500px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 130px; 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 130px;
     background: #FFFFFF;
-} 
+}
 
 input[type=tel]{
     margin-left: 15px;
@@ -116,12 +116,12 @@ input[id="new-firstname"]{
     margin-bottom: 5px;
     margin-right: 0px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 160px; 
-    background: #FFFFFF; 
-} 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 160px;
+    background: #FFFFFF;
+}
 
 input[id="new-lastname"]{
     margin-left: 5px;
@@ -130,12 +130,12 @@ input[id="new-lastname"]{
     margin-bottom: 5px;
     margin-right: 0px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 160px; 
-    background: #FFFFFF; 
-} 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 160px;
+    background: #FFFFFF;
+}
 
 input[id="new-zipcode"]{
     margin-left: 15px;
@@ -144,12 +144,12 @@ input[id="new-zipcode"]{
     margin-bottom: 50px;
     margin-right: 500px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 130px; 
-    background: #FFFFFF; 
-} 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 130px;
+    background: #FFFFFF;
+}
 
 #content {
   overflow: auto;
@@ -384,17 +384,12 @@ h4 {
     outline: none;
 }
 
-input:hover, textarea:hover, 
-input:focus, textarea:focus { 
-    border-color: #C9C9C9; 
-    } 
-   
-.form label { 
-    margin-left: 0px; 
-    color: #999999; 
-    } 
-   
-.request input { 
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    border-color: #C9C9C9;
+    }
+
+.request input {
     padding: 10px;
     margin-left: 825px;
     border-radius: 2px;
@@ -411,39 +406,29 @@ textarea {
     margin-top: -350px;
     border-radius: 3px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    background: #FFFFFF; 
-    } 
-   
-textarea { 
-    width: 840px; 
-    height: 90px; 
-    line-height: 150%; 
-    } 
-
-/*input, textarea {
-    margin-left: 15px;
-    border-radius: 3px;
-    padding: 9px;
     border: solid 1px #E5E5E5;
     outline: 1px;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
-    width: 200px;
     background: #FFFFFF;
     }
 
 textarea {
-    width: 550px;
-    max-width: 550px;
+    width: 840px;
     height: 90px;
     line-height: 150%;
     }
 
-article {
-  background: white;
-  border-radius: 5px;
-  border: none;
-  height: 500px;
-}*/
+.feed {
+  width: 620px;
+  text-align: left;
+  display: inline;
+}
+
+.feed-title {
+  text-align: left;
+}
+
+.contact-info {
+  width: 300px;
+  display: inline;
+}
