@@ -27,7 +27,7 @@ $(function() {
       // Renders user's own requests to the user feed
       if (userKey === userData.key) {
         $("#user-feed").prepend("<p class=" + requestKey + ">" + requestDescription +
-          "</p><button id=" + requestKey + " class=" + requestKey + ">Deactivate</button>");
+          "</p><button id=" + requestKey + " class=" + requestKey + ">Deactivate</button>" + "<hr/>");
 
         // Event listener for a user to deactivate requests
         $('#' + requestKey).on('click', function() {
@@ -41,7 +41,7 @@ $(function() {
         userRef.on("value", function(userSnapshot) {
           $("#main-feed").prepend("<h4 class=" + requestKey + ">" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
             "</h4><p class=" + requestKey + ">" + requestDescription +
-            "</p><button id=" + requestKey + " class=" + requestKey + ">Respond</button>");
+            "</p><button id=" + requestKey + " class=" + requestKey + ">Respond</button>" + "<hr/>");
 
           // Event listener for a user to respond to a request
           $('#' + requestKey).on('click', function() {
