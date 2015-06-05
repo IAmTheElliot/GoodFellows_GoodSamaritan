@@ -1,9 +1,21 @@
+<<<<<<< HEAD
+body {
+=======
 #index{
+>>>>>>> master
   width: 960px;
   height: 600px;
   margin: 0 auto;
   background-image:linear-gradient(to bottom, #58c0c7 , #0099CC);
+<<<<<<< HEAD
+<<<<<<< HEAD
   background-repeat: no-repeat;
+}
+=======
+  background-repeat: no-repeat; 
+=======
+  background-repeat: no-repeat;
+>>>>>>> master
 }
 
 #Newuser{
@@ -14,12 +26,16 @@
   background-repeat: no-repeat;
 }
 
+>>>>>>> master
 h1 {
   color: white;
   font-family: 'Lobster', cursive;
   font-size: 150px;
   text-align: center;
 }
+<<<<<<< HEAD
+form {
+=======
 
 #first-name {
   float: left;
@@ -33,6 +49,7 @@ h1 {
 }
 
 #sign-in-form {
+>>>>>>> master
   width: 405px;
   height: 175px;
   background-color: white;
@@ -40,6 +57,8 @@ h1 {
   padding-top: 10px;
   margin-left: 270px;
   margin-top: -50px;
+<<<<<<< HEAD
+=======
 }
 
 #new-request-form {
@@ -54,8 +73,8 @@ h1 {
   background-color: white;
   margin-left: 50px;
   margin-top: 50px;
+>>>>>>> master
 }
-
 input[type=email]{
     margin-left: 15px;
     margin-top: 5px;
@@ -70,6 +89,24 @@ input[type=email]{
 }
 input[type=password]{
     margin-left: 15px;
+<<<<<<< HEAD
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 200px;
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 350px;
+    background: #FFFFFF;
+}
+input[type=firstname]{
+    margin-left: 15px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+=======
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -101,27 +138,93 @@ input[type=tel]{
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 3px;
+>>>>>>> master
     padding: 9px;
     border: solid 1px #E5E5E5;
     outline: 1px;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
+<<<<<<< HEAD
+    width: 160px;
+    background: #FFFFFF;
+}
+
+input[type=lastname]{
+    margin-left: 5px;
+=======
     width: 350px;
     background: #FFFFFF;
 }
 
 input[id="new-firstname"]{
     margin-left: 15px;
+>>>>>>> master
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 0px;
     padding: 9px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     border: solid 1px #E5E5E5;
     outline: 1px;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
     width: 160px;
     background: #FFFFFF;
 }
+<<<<<<< HEAD
+
+input[type=city]{
+    margin-left: 15px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 500px;
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 130px;
+    background: #FFFFFF;
+}
+
+input[type=tel]{
+    margin-left: 15px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 500px;
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 200px;
+    background: #FFFFFF;
+}
+
+input[type=zip]{
+    margin-left: 15px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-right: 500px;
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 130px;
+    background: #FFFFFF;
+}
+=======
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 160px; 
+    background: #FFFFFF; 
+} 
+=======
+>>>>>>> master
 
 input[id="new-lastname"]{
     margin-left: 5px;
@@ -144,12 +247,22 @@ input[id="new-zipcode"]{
     margin-bottom: 50px;
     margin-right: 500px;
     padding: 9px;
+<<<<<<< HEAD
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 130px; 
+    background: #FFFFFF; 
+} 
+>>>>>>> master
+=======
     border: solid 1px #E5E5E5;
     outline: 1px;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
     width: 130px;
     background: #FFFFFF;
 }
+>>>>>>> master
 
 #content {
   overflow: auto;
@@ -165,13 +278,21 @@ input[id="new-zipcode"]{
   margin: 10px;
 }
 
+<<<<<<< HEAD
+li {
+  display: inline;
+  padding: 5px;
+}
+
+=======
+>>>>>>> master
 h2 {
-  color: black;
+  color: #58c0c7;
   margin-top: 3px;
   margin-bottom: 0px;
   padding-bottom: 2px;
   font-family: 'Lobster', cursive;
-  font-size: 48px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -187,8 +308,17 @@ h3 {
 }
 
 h4 {
+<<<<<<< HEAD
   font-size: 20px;
+  color: #0099CC;
+  /*font: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
+  /*margin-left: 15px;*/
+=======
+  font-size: 35px;
   font: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin-left: 15px;
+
+>>>>>>> master
 }
 
 #jointitle {
@@ -199,10 +329,20 @@ h4 {
   padding-top: 30px;
 }
 
+<<<<<<< HEAD
+.log-out {
+  padding-top: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: right;
+  color: white;
+=======
 #log-out {
   font-size: 14px;
   font-color: black;
   font-family: "Helvetica Neue", sans-serif;
+>>>>>>> master
 }
 #whitespace1 {
   width: 400px;
@@ -216,11 +356,19 @@ h4 {
 }
 
 .whitespace2 {
+<<<<<<< HEAD
+  width: 650px;
+  height: 650px;
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-left: 165px;
+=======
   width: 750px;
   height: 700px;
   border-radius: 3px;
   margin-top: 30px;
   margin-left: 115px;
+>>>>>>> master
   background-color: white;
   display: inline-block;
 }
@@ -242,6 +390,9 @@ h4 {
   border-radius: 3px;
   background-color: white;
   display: inline-block;
+<<<<<<< HEAD
+
+=======
 }
 
 #navbar {
@@ -252,6 +403,7 @@ h4 {
   margin-bottom: 50px;
   padding-top: 5px;
   margin-left: -520px;
+>>>>>>> master
 }
 /*
 #user-feed {
@@ -277,11 +429,17 @@ h4 {
   color: white;
   font-family: "Helvetica Neue", sans-serif;
   text-align: center;
+<<<<<<< HEAD
+  color: white;
+}
+
+=======
 }
 
 
 
 
+>>>>>>> master
 .styled-button-7 {
   background: #FF5DB1;
   background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
@@ -303,7 +461,11 @@ h4 {
   padding-left: 60px;
   padding-right: 60px;
   margin-left: 116px;
+<<<<<<< HEAD
+  margin-top: 15px;
+=======
   margin-top: 20px;
+>>>>>>> master
   margin-bottom: 6px;
 }
 .styled-button-8 {
@@ -357,6 +519,136 @@ h4 {
     height: 10em;
     margin-bottom: 1em;}
 
+<<<<<<< HEAD
+#navbar {
+  background: #fcfcfc;
+  margin: 0 0 3em 0px;
+  list-style: none;
+  border-bottom: 1px solid #fcfcfc;
+  border-top: 1px solid #fcfcfc;
+  font-family: 'Roboto', sans-serif;
+}
+#navbar li {
+float: left;
+}
+#navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+#navbar ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#navbar ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#navbar.align-right ul li {
+  float: right;
+}
+#navbar.align-center ul {
+  text-align: center;
+}
+#navbar ul li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#navbar ul li a:hover {
+  color: #8dd2d9;
+}
+#navbar ul li a:hover:before {
+  width: 100%;
+}
+#navbar ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#navbar ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #333333;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#navbar ul li.last > a:after,
+#navbar ul li:last-child > a:after {
+  display: none;
+}
+#navbar ul li.active a {
+  color: #333333;
+}
+#navbar ul li.active a:before {
+  width: 100%;
+}
+#navbar.align-right li.last > a:after,
+#navbar.align-right li:last-child > a:after {
+  display: block;
+}
+#navbar.align-right li:first-child a:after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #navbar ul li {
+    float: none;
+    display: block;
+  }
+  #navbar ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fb998c;
+  }
+  #navbar ul li.last > a,
+  #navbar ul li:last-child > a {
+    border: 0;
+  }
+  #navbar ul li a:after {
+    display: none;
+  }
+  #navbar ul li a:before {
+    display: none;
+  }
+}
+
+=======
+>>>>>>> master
 #new-state {
     border: 1px solid #ccc;
     width: 150px;
@@ -382,14 +674,42 @@ h4 {
     outline: none;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 input:hover, textarea:hover,
 input:focus, textarea:focus {
     border-color: #C9C9C9;
     }
 
+<<<<<<< HEAD
+.form label {
+    margin-left: 10px;
+    color: #999999;
+    }
+
 .request input {
     padding: 10px;
+    margin-left: 807px;
+=======
+input:hover, textarea:hover, 
+input:focus, textarea:focus { 
+    border-color: #C9C9C9; 
+    } 
+   
+.form label { 
+    margin-left: 0px; 
+    color: #999999; 
+    } 
+   
+.request input { 
+=======
+.request input {
+>>>>>>> master
+    padding: 10px;
     margin-left: 825px;
+>>>>>>> master
     border-radius: 2px;
     width: auto;
     background: #617798;
@@ -399,6 +719,15 @@ input:focus, textarea:focus {
     }
 
 textarea {
+<<<<<<< HEAD
+    margin: 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+=======
     margin: 40px;
     margin-bottom: 10px;
     margin-top: -350px;
@@ -407,30 +736,31 @@ textarea {
     border: solid 1px #E5E5E5;
     outline: 1px;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
+<<<<<<< HEAD
+    width: 200px;
+>>>>>>> master
+=======
+>>>>>>> master
     background: #FFFFFF;
     }
 
 textarea {
+<<<<<<< HEAD
+<<<<<<< HEAD
     width: 840px;
+=======
+    width: 550px;
+    max-width: 550px;
+>>>>>>> master
+=======
+    width: 840px;
+>>>>>>> master
     height: 90px;
     line-height: 150%;
     }
 
-.feed {
-  width: 620px;
-  text-align: left;
-  display: inline;
-}
-
-.feed-title {
-  text-align: left;
-}
-
-.contact-info {
-  width: 300px;
-  display: inline;
-}
-
+<<<<<<< HEAD
+<<<<<<< HEAD
 button {
   -moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
   -webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
@@ -457,7 +787,6 @@ button {
   text-decoration:none;
   text-shadow:0px 1px 0px #ffee66;
 }
-
 button:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
   background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
@@ -482,3 +811,27 @@ p {
   font-family: "Helvetica Neue", sans-serif;
   padding-left: 20px;
 }
+=======
+article {
+  background: white;
+  border-radius: 5px;
+  border: none;
+  height: 500px;
+}*/
+>>>>>>> master
+=======
+.feed {
+  width: 620px;
+  text-align: left;
+  display: inline;
+}
+
+.feed-title {
+  text-align: left;
+}
+
+.contact-info {
+  width: 300px;
+  display: inline;
+}
+>>>>>>> master
