@@ -26,14 +26,14 @@
         <p id="jointitle">Join goodSam today.</p>
         <div class="inputboxes">
         <form action="" method="post" name="new-user-form" id="new-user-form" onsubmit="return false">
-            <input type="email" name="new-email" id="new-email" placeholder="Enter your email" required="requied">
-            <input type="password" name="new-password1" id="new-password1" placeholder="Enter Password" autocomplete = "off">
-            <input type="password" name="new-password2" id="new-password2" placeholder="Confirm Password"  autocomplete = "off">
-            <input type="text" class="firstlastname" name="new-firstname" id="new-firstname" placeholder="Enter First Name">
-            <input type="text" class="firstlastname" name="new-lastname" id="new-lastname" placeholder="Enter Last Name">
-            <input type="tel" name="new-phonenumber" id="new-phonenumber" placeholder="Phone" maxlength="10">
-            <input type="text" name="new-city" id="new-city" placeholder="City">
-          <select name="new-state" id="new-state" required="required">
+          <input type="email" name="new-email" id="new-email" placeholder="Enter your email" required>
+          <input type="password" name="new-password1" id="new-password1" placeholder="Enter Password" autocomplete = "off" required>
+          <input type="password" name="new-password2" id="new-password2" placeholder="Confirm Password"  autocomplete = "off" required>
+          <input type="text" class="firstlastname" name="new-firstname" id="new-firstname" placeholder="Enter First Name" required>
+          <input type="text" class="firstlastname" name="new-lastname" id="new-lastname" placeholder="Enter Last Name" required>
+          <input type="tel" name="new-phonenumber" id="new-phonenumber" placeholder="Phone" maxlength="14" required>
+          <input type="text" name="new-city" id="new-city" placeholder="City" required>
+          <select name="new-state" id="new-state" required>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -86,7 +86,7 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
-          <input type="text" name ="new-zipcode" id="new-zipcode" placeholder="Zip" required="required" maxlength="5">
+          <input type="text" name ="new-zipcode" id="new-zipcode" placeholder="Zip" maxlength="5" required>
           <input id="submit-account-data" type="submit" class="styled-button-8" value="Create Account">
         </form>
     </div>
