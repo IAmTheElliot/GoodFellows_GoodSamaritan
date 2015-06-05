@@ -13,16 +13,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body>
+  <body id="Newuser">
     <div id="header">
       <div id="navbar">
-        <ul>
-          <li><a id='log-out' href='index.html'><span>Logout</span></a></li>
-          <h3>goodSam</h3>
-        </ul>
+        <h2>goodSam<h2>
+        <a id='log-out' href='index.html'><span>Log-out</span></a>
       </div>
     </div>
-      <form class="form">
+    <section class="container_12 clearfix">
+      <section>
+        <div class="userinfo">
+          <h1 id="first-name"></h1>
+        </div>
+      </section>
+        <form id="new-request-form" class="form">
         <div class="text">
           <textarea id="request-text" name="text" placeholder="What do you need help with?"></textarea>
           <p id="request-message"></p>
@@ -39,20 +43,13 @@
       </section>
       <section class="contact-info">
         <h2>Requestor Contact Information</h2>
-      </section>
-      <div id="allrequest">
-        <div class="userinfo">
-          <h1 id="first-name"></h1>
-          <ul>
-            <li id="location">Location: </li>
-            <li id="email">Email: </li>
-            <li id="phone-number">Phone: </li>
-          </ul>
+        <div id="allrequest">
+          <p id="requestor-name"></p>
+          <p id="requestor-email"></p>
+          <p id="requestor-phone"></p>
+          <p id="requestor-location"></p>
         </div>
-      </div>
-    <p id="requestor-name"></p>
-    <p id="requestor-email"></p>
-    <p id="requestor-phone"></p>
-    <p id="requestor-location"></p>
+      </section>
+    </section>
   </body>
 </html>
