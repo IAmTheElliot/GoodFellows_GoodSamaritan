@@ -105,7 +105,10 @@ $(function() {
       console.log("this line is executing");
       //HTML elements to display the object(requestors) info
       if (showRequestorInfo.firstName != "") {
-        $('#requestor-name').text(showRequestorInfo.firstName + snapshot.lastName);
+        $('#requestor-name').text(showRequestorInfo.firstName);
+      }
+      if (showRequestorInfo.lastName != "") {
+        $('#requestor-name').append(" " + showRequestorInfo.lastName)
       }
       if (showRequestorInfo.phoneNumber != "") {
         $('#requestor-phone').text(showRequestorInfo.phoneNumber);
@@ -117,10 +120,10 @@ $(function() {
         $('#requestor-location').text(showRequestorInfo.city)
       }
       if (showRequestorInfo.state != "") {
-        $('#requestor-location').append(" " + showRequestorInfo.state)
+        $('#requestor-location').append(", " + showRequestorInfo.state)
       }
       if (showRequestorInfo.zip != "") {
-        $('#requestor-location').append(", " + showRequestorInfo.zip);
+        $('#requestor-location').append(" " + showRequestorInfo.zip);
       }
          // + " " + snapshot.state + ", " + snapshot.zip);
     });
