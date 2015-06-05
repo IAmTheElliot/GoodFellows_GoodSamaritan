@@ -44,9 +44,12 @@ $(function() {
             userObj.key = childSnapshot.key();
             sessionStorage.setItem("userStorage", JSON.stringify(userObj));
             location.href = "userProfile.html";
+            return true;
           } else {
             $("#invalid").text("Incorrect password! Please try again.");
           }
+          return true;
+        } else if (!email) {
           return true;
         } else {
           $("#invalid").text("This account does not exist! Please try again or create a new account.");
@@ -61,7 +64,6 @@ $(function() {
   })
 
   $("input#user-email").on("focus", function() {
-    $("#invalid").text("");
     $("#password").val("");
   })
 

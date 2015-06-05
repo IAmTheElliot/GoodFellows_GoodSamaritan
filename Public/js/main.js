@@ -32,7 +32,6 @@ $(function() {
 
         $('.' + requestSnapshot.key()).on('click', function() {
           requestRef.child(requestSnapshot.key()).update({ isActive: false });
-          console.log("Hi");
         });
       } else {
         var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + activeRequest.key);
@@ -57,24 +56,22 @@ $(function() {
   };
 
 // Creates a new request for assistance
-// MISSING jQUERY REFERENCES TO HTML/DOM
-// CLICK EVENT BELOW NEEDS POINTER
   Request.prototype.createRequest = function() {
     newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
     newUserRequest.push({
       key: userObj.key,
-      description: $('textarea#request-text').val(),
+      description: $('#request-text').val(),
       isActive: true,
       date: event.timeStamp
     }, function(){
     console.log("createRequest has been pushed to firebase"),
-      $('textarea#request-text').val("");
+      $('#request-text').val("");
     console.log(userObj.key);
     })
   };
 
   $('#new-request-button').on('click', function(e) {
-    if ($('textarea#request-text').val() == "" ) {
+    if ($('#request-text').val() == "" ) {
       e.preventDefault();
       console.log("Please enter your help request details!");
     } else {
@@ -83,16 +80,6 @@ $(function() {
       userRequest.createRequest();
     }
   });
-
-// saved sample code for using moment() to return timestamp to viewable date
-/*  $('#test-button').on('click', function(){
-    var dateVar = event.timeStamp;
-    console.log(event.timeStamp);
-    console.log(moment());
-    console.log(moment(1433292533519));
-    console.log(moment(dateVar));
-  })
-*/
 
   Request.prototype.respondRequest = function(key) {
     console.log("the respondRequest prototype has been called");
@@ -125,7 +112,6 @@ $(function() {
       if (showRequestorInfo.zip != "") {
         $('#requestor-location').append(" " + showRequestorInfo.zip);
       }
-         // + " " + snapshot.state + ", " + snapshot.zip);
     });
   };
 
