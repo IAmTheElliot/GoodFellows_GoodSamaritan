@@ -51,9 +51,6 @@ $(function() {
     })
   };
 
-// Creates a new request for assistance
-// MISSING jQUERY REFERENCES TO HTML/DOM
-// CLICK EVENT BELOW NEEDS POINTER
   Request.prototype.createRequest = function() {
     newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
     newUserRequest.push({
@@ -79,16 +76,6 @@ $(function() {
     }
   });
 
-// saved sample code for using moment() to return timestamp to viewable date
-/*  $('#test-button').on('click', function(){
-    var dateVar = event.timeStamp;
-    console.log(event.timeStamp);
-    console.log(moment());
-    console.log(moment(1433292533519));
-    console.log(moment(dateVar));
-  })
-*/
-
   Request.prototype.respondRequest = function(key) {
     console.log("the respondRequest prototype has been called");
     console.log("the ID is: " + key);
@@ -100,7 +87,10 @@ $(function() {
       console.log("this line is executing");
       //HTML elements to display the object(requestors) info
       if (showRequestorInfo.firstName != "") {
-        $('#requestor-name').text(showRequestorInfo.firstName + snapshot.lastName);
+        $('#requestor-name').text(showRequestorInfo.firstName);
+      }
+      if (showRequestorInfo.lastName != "") {
+        $('#requestor-name').append(" " + snapshot.lastName);
       }
       if (showRequestorInfo.phoneNumber != "") {
         $('#requestor-phone').text(showRequestorInfo.phoneNumber);
@@ -112,12 +102,11 @@ $(function() {
         $('#requestor-location').text(showRequestorInfo.city)
       }
       if (showRequestorInfo.state != "") {
-        $('#requestor-location').append(" " + showRequestorInfo.state)
+        $('#requestor-location').append(", " + showRequestorInfo.state)
       }
       if (showRequestorInfo.zip != "") {
-        $('#requestor-location').append(", " + showRequestorInfo.zip);
+        $('#requestor-location').append(" " + showRequestorInfo.zip);
       }
-         // + " " + snapshot.state + ", " + snapshot.zip);
     });
   };
 
