@@ -1,131 +1,141 @@
 $(function() {
 
-  function renderUserInfo() {
+  // "goodSam" object constructor
+  function goodSam() {};
 
-      $("#first-name").text("Welcome, " + userObj.firstName + "!");
-      $("#location").append(userObj.city + ", " + userObj.state);
-      $("#email").append(userObj.email);
-      $("#phone-number").append(userObj.phoneNumber);
+  // Creates new instance of "goodSam" object constructor
+  var app = new goodSam();
+
+  // Fetches and stores current user data from session storage
+  var userData = JSON.parse(sessionStorage.getItem("userStorage"));
+
+  // Renders fetched user data to the page
+  goodSam.prototype.renderUser = function() {
+    $("#first-name").text("Welcome, " + userData.firstName + "!");
+    $("#location").append(userData.city + ", " + userData.state);
+    $("#email").append(userData.email);
+    $("#phone-number").append(userData.phoneNumber);
   };
 
-
-  function Request() {
-    this.requestorId = "";
-    this.description = "";
-    this.isActive = "";
-    this.date = "";
-  };
-
-  var userRequest = new Request();
-
-  var userObj = JSON.parse(sessionStorage.getItem("userStorage"));
-
-  Request.prototype.renderRequestInfo = function() {
+  // Renders info from requests fetched from the database to separate feeds on the page
+  goodSam.prototype.renderRequest = function() {
     var requestRef = new Firebase("https://good-samaritan-cf.firebaseio.com/Request");
 
+    // Filters for active requests
     requestRef.orderByChild("isActive").equalTo(true).on("child_added", function(requestSnapshot) {
-      var activeRequest = requestSnapshot.val();
+      var requestDescription = requestSnapshot.val().description;
+      var requestKey = requestSnapshot.key();
+      var userKey = requestSnapshot.val().key;
 
-      if (activeRequest.key === userObj.key) {
-        $("#user-feed").prepend("<p class=" + requestSnapshot.key() + ">" + activeRequest.description +
-          "</p><button class=" + requestSnapshot.key() + " name=" + userObj.key + ">Deactivate</button>");
+      // Renders user's own requests to the user feed
+      if (userKey === userData.key) {
+        $("#user-feed").prepend("<p class=" + requestKey + ">" + requestDescription +
+          "</p><button id=" + requestKey + " class=" + requestKey + ">Deactivate</button>");
 
-        $('.' + requestSnapshot.key()).on('click', function() {
-          requestRef.child(requestSnapshot.key()).update({ isActive: false });
+        // Event listener for a user to deactivate requests
+        $('#' + requestKey).on('click', function() {
+          app.deactivateRequest(requestRef, requestKey);
         });
+
+      // Renders all other requests to the main feed
       } else {
-        var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + activeRequest.key);
+        var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + userKey);
 
         userRef.on("value", function(userSnapshot) {
-          $("#other-feed").prepend("<h4>" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
-            "</h4><p>" + activeRequest.description +
-            "</p><button id=" + requestSnapshot.key() + " name=" + activeRequest.key + ">Respond</button>");
+          $("#main-feed").prepend("<h4 class=" + requestKey + ">" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
+            "</h4><p class=" + requestKey + ">" + requestDescription +
+            "</p><button id=" + requestKey + " class=" + requestKey + ">Respond</button>");
 
-          // create event listener
-          $('#' + requestSnapshot.key()).on('click', function() {
-            console.log('the button works for ' + requestSnapshot.key());
-            userRequest.respondRequest(activeRequest.key);
+          // Event listener for a user to respond to a request
+          $('#' + requestKey).on('click', function() {
+            app.respondRequest(userKey);
           })
         })
       }
     })
 
+    // Removes deactivated requests from the user feed
     requestRef.orderByChild("isActive").equalTo(false).on("child_added", function(requestSnapshot) {
-      $("." + requestSnapshot.key()).remove();
+      var requestKey = requestSnapshot.key();
+
+      $("." + requestKey).remove();
     })
   };
 
-// Creates a new request for assistance
-  Request.prototype.createRequest = function() {
-    newUserRequest = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
-    newUserRequest.push({
-      key: userObj.key,
+  // Creates a new user request and adds it to the database
+  goodSam.prototype.createRequest = function() {
+    requestRef = new Firebase('https://good-samaritan-cf.firebaseio.com/Request');
+
+    requestRef.push({
+      key: userData.key,
       description: $('#request-text').val(),
       isActive: true,
       date: event.timeStamp
-    }, function(){
-    console.log("createRequest has been pushed to firebase"),
+    }, function() {
       $('#request-text').val("");
-    console.log(userObj.key);
     })
   };
 
-  $('#new-request-button').on('click', function(e) {
-    if ($('#request-text').val() == "" ) {
-      e.preventDefault();
-      console.log("Please enter your help request details!");
-    } else {
-      e.preventDefault();
-      console.log("make request is pressed");
-      userRequest.createRequest();
-    }
-  });
+  // Fetches requestor contact info and renders it to the page
+  goodSam.prototype.respondRequest = function(key) {
+    var userRef = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
 
-  Request.prototype.respondRequest = function(key) {
-    console.log("the respondRequest prototype has been called");
-    console.log("the ID is: " + key);
+    userRef.child(key).on("value", function(snapshot) {
+      var contactInfo = snapshot.val();
 
-    var userDataRef = new Firebase('https://good-samaritan-cf.firebaseio.com/User');
-    userDataRef.child(key).on("value", function(snapshot){
-      console.log(snapshot.val());
-      var showRequestorInfo = snapshot.val();
-      console.log("this line is executing");
-      //HTML elements to display the object(requestors) info
-      if (showRequestorInfo.firstName != "") {
-        $('#requestor-name').text(showRequestorInfo.firstName);
+      if (contactInfo.firstName != "") {
+        $('#requestor-name').text(contactInfo.firstName);
       }
-      if (showRequestorInfo.lastName != "") {
-        $('#requestor-name').append(" " + showRequestorInfo.lastName)
+      if (contactInfo.lastName != "") {
+        $('#requestor-name').append(" " + contactInfo.lastName);
       }
-      if (showRequestorInfo.phoneNumber != "") {
-        $('#requestor-phone').text(showRequestorInfo.phoneNumber);
+      if (contactInfo.phoneNumber != "") {
+        $('#requestor-phone').text(contactInfo.phoneNumber);
       }
-      if (showRequestorInfo.email != "") {
-        $('#requestor-email').text(showRequestorInfo.email);
+      if (contactInfo.email != "") {
+        $('#requestor-email').text(contactInfo.email);
       }
-      if (showRequestorInfo.city != "") {
-        $('#requestor-location').text(showRequestorInfo.city)
+      if (contactInfo.city != "") {
+        $('#requestor-location').text(contactInfo.city);
       }
-      if (showRequestorInfo.state != "") {
-        $('#requestor-location').append(", " + showRequestorInfo.state)
+      if (contactInfo.state != "") {
+        $('#requestor-location').append(", " + contactInfo.state);
       }
-      if (showRequestorInfo.zip != "") {
-        $('#requestor-location').append(" " + showRequestorInfo.zip);
+      if (contactInfo.zip != "") {
+        $('#requestor-location').append(" " + contactInfo.zip);
       }
     });
   };
 
-  Request.prototype.deactivateRequest = function() {
-
+  // Deactivates a user request
+  goodSam.prototype.deactivateRequest = function(ref, key) {
+    ref.child(key).update({ isActive: false });
   };
 
-  renderUserInfo();
-  userRequest.renderRequestInfo();
+  // Calls methods to render user and request info to the page
+  app.renderUser();
+  app.renderRequest();
 
+  // Event listener to create a new user request
+  $('#new-request-button').on('click', function(e) {
+    if ($('#request-text').val() == "" ) {
+      e.preventDefault();
+      $('#request-message').text("Please enter a request description!");
+    } else {
+      e.preventDefault();
+      app.createRequest();
+    }
+  });
 
+  // Event listener to clear new request error message on text field focus
+  $('#request-text').on('focus', function() {
+    $('#request-message').text("");
+  })
 
+  // Event listener to clear user info from session storage upon logout
   $('#log-out').on('click', function() {
     sessionStorage.clear();
   });
+
 });
 
