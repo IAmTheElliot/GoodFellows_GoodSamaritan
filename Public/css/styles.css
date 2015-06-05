@@ -3,7 +3,7 @@ body {
   height: 600px;
   margin: 0 auto;
   background-image:linear-gradient(to bottom, #58c0c7 , #0099CC);
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 h1 {
   color: white;
@@ -46,44 +46,44 @@ input[type=password]{
     background: #FFFFFF;
 }
 input[type=firstname]{
-    margin-left: 15px; 
+    margin-left: 15px;
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 160px; 
-    background: #FFFFFF; 
-} 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 160px;
+    background: #FFFFFF;
+}
 
 input[type=lastname]{
-    margin-left: 5px; 
+    margin-left: 5px;
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 160px; 
-    background: #FFFFFF; 
-} 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 160px;
+    background: #FFFFFF;
+}
 
 input[type=city]{
-    margin-left: 15px; 
+    margin-left: 15px;
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 500px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 130px; 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 130px;
     background: #FFFFFF;
-} 
+}
 
 input[type=tel]{
     margin-left: 15px;
@@ -106,12 +106,12 @@ input[type=zip]{
     margin-bottom: 30px;
     margin-right: 500px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 130px; 
-    background: #FFFFFF; 
-} 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    width: 130px;
+    background: #FFFFFF;
+}
 
 #content {
   overflow: auto;
@@ -477,17 +477,17 @@ float: left;
     outline: none;
 }
 
-input:hover, textarea:hover, 
-input:focus, textarea:focus { 
-    border-color: #C9C9C9; 
-    } 
-   
-.form label { 
-    margin-left: 10px; 
-    color: #999999; 
-    } 
-   
-.request input { 
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    border-color: #C9C9C9;
+    }
+
+.form label {
+    margin-left: 10px;
+    color: #999999;
+    }
+
+.request input {
     padding: 10px;
     margin-left: 807px;
     border-radius: 2px;
@@ -503,18 +503,32 @@ textarea {
     margin-bottom: 10px;
     border-radius: 3px;
     padding: 9px;
-    border: solid 1px #E5E5E5; 
-    outline: 1px; 
-    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    background: #FFFFFF; 
-    } 
-   
-textarea { 
-    width: 840px; 
-    height: 90px; 
-    line-height: 150%; 
-    } 
+    border: solid 1px #E5E5E5;
+    outline: 1px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    background: #FFFFFF;
+    }
 
+textarea {
+    width: 840px;
+    height: 90px;
+    line-height: 150%;
+    }
+
+.feed {
+  width: 620px;
+  text-align: left;
+  display: inline;
+}
+
+.feed-title {
+  text-align: left;
+}
+
+.contact-info {
+  width: 300px;
+  display: inline;
+}
 /*input, textarea {
     margin-left: 15px;
     border-radius: 3px;
