@@ -29,6 +29,11 @@ $(function() {
       if (activeRequest.key === userObj.key) {
         $("#user-feed").prepend("<p class=" + requestSnapshot.key() + ">" + activeRequest.description +
           "</p><button class=" + requestSnapshot.key() + " name=" + userObj.key + ">Deactivate</button>");
+
+        $('.' + requestSnapshot.key()).on('click', function() {
+          requestRef.child(requestSnapshot.key()).update({ isActive: false });
+          console.log("Hi");
+        });
       } else {
         var userRef = new Firebase("https://good-samaritan-cf.firebaseio.com/User/" + activeRequest.key);
 
@@ -46,8 +51,8 @@ $(function() {
       }
     })
 
-    requestRef.orderByChild("isActive").equalTo(false).on("child_added", function(snapshot) {
-      $("." + snapshot.key()).remove();
+    requestRef.orderByChild("isActive").equalTo(false).on("child_added", function(requestSnapshot) {
+      $("." + requestSnapshot.key()).remove();
     })
   };
 
@@ -130,6 +135,8 @@ $(function() {
 
 
 
-
-
+  $('#log-out').on('click', function() {
+    sessionStorage.clear();
+  });
 });
+

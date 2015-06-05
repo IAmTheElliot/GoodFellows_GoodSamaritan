@@ -17,6 +17,50 @@ h1 {
   text-align: right;
 }
 
+h2 {
+  color: #58c0c7;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  padding-bottom: 2px;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  text-align: center;
+}
+
+h3 {
+  color: #58c0c7;
+  margin-top: 6px;
+  margin-right: 280px;
+  margin-bottom: 0px;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  text-align: center;
+
+}
+
+h4 {
+  font-size: 35px;
+  font: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin-left: 15px;
+
+}
+
+#jointitle {
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-size: 35px;
+  color: #58c0c7;
+  padding-top: 30px;
+}
+
+.log-out {
+  padding-top: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: right;
+  color: white;
+}
 .whitespace1 {
   width: 400px;
   height: 160px;
@@ -25,6 +69,53 @@ h1 {
   background-color: white;
   display: inline-block;
   padding: 10px;
+}
+
+.whitespace2 {
+  width: 650px;
+  height: 650px;
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-left: 165px;
+  background-color: white;
+  display: inline-block;
+}
+
+#whitespace3 {
+  width: 900px;
+  height: 650px;
+  margin-top: 30px;
+  margin-left: 350px;
+  border-radius: 3px;
+  background-color: white;
+  display: inline-block;
+}
+
+#whitespace4 {
+  width: 900px;
+  height: 650px;
+  margin-top: 30px;
+  border-radius: 3px;
+  background-color: white;
+  display: inline-block;
+
+}
+/*
+#user-feed {
+  padding-top: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: white;}
+*/
+
+#other-feed {
+  font: normal 40px/100% Verdana, Tahoma, sans-serif; ;
+}
+
+.inputboxes {
+  margin-left: 125px;
 }
 
 .signup {
@@ -54,6 +145,7 @@ input[type=password]{
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-right: 200px;
     padding: 9px;
     border: solid 1px #E5E5E5;
     outline: 1px;
@@ -62,22 +154,52 @@ input[type=password]{
     background: #FFFFFF;
 }
 
-input[type=text]{
-    margin-left: 15px;
+input[type=firstname]{
+    margin-left: 15px; 
     border-radius: 3px;
+    margin-top: 5px;
     margin-bottom: 5px;
     padding: 9px;
-    border: solid 1px #E5E5E5;
-    outline: 1px;
-    font: normal 13px/100% Verdana, Tahoma, sans-serif;
-    width: 200px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 160px; 
+    background: #FFFFFF; 
+} 
+
+input[type=lastname]{
+    margin-left: 5px; 
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 160px; 
+    background: #FFFFFF; 
+} 
+
+input[type=city]{
+    margin-left: 15px; 
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 500px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 130px; 
     background: #FFFFFF;
-}
+} 
 
 input[type=tel]{
     margin-left: 15px;
     border-radius: 3px;
+    margin-top: 5px;
     margin-bottom: 5px;
+    margin-right: 500px;
     padding: 9px;
     border: solid 1px #E5E5E5;
     outline: 1px;
@@ -89,14 +211,17 @@ input[type=tel]{
 input[type=zip]{
     margin-left: 15px;
     border-radius: 3px;
-    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-right: 500px;
     padding: 9px;
-    border: solid 1px #E5E5E5;
-    outline: 1px;
-    font: normal 13px/100% Verdana, Tahoma, sans-serif;
-    width: 200px;
-    background: #FFFFFF;
-}
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    width: 130px; 
+    background: #FFFFFF; 
+} 
+
 .styled-button-7 {
   background: #FF5DB1;
   background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
@@ -139,10 +264,10 @@ input[type=zip]{
   border:1px solid #E8124F;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 120px;
-  padding-right: 120px;
-  margin-left: 40px;
-  margin-top: 3px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-left: 75px;
+  margin-top: 0px;
 }
 
 #invalid {
@@ -301,33 +426,19 @@ float: left;
   }
 }
 
-h2 {
-  color: #58c0c7;
-  margin-top: 3px;
-  margin-bottom: 10px;
-  font-family: 'Lobster', cursive;
-  font-size: 24px;
-  text-align: center;
-}
-
-p {
-  font-family: "Helvetica Neue", sans-serif;
-  text-align: center;
-  font-size: 45px;
-  color: #0099CC;
-}
-
 #new-state {
     border: 1px solid #ccc;
     width: 150px;
-    margin-left: 150px;
+    margin-left: 15px;
+    margin-right: 500px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: 3px;
     overflow: hidden;
     background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
 }
 
 #new-state select {
-    padding: 5px 8px;
     width: 130%;
     border: none;
     box-shadow: none;
@@ -340,20 +451,19 @@ p {
     outline: none;
 }
 
-input:hover, textarea:hover,
-input:focus, textarea:focus {
-    border-color: #C9C9C9;
-    }
-
-.form label {
-    margin-left: 10px;
-    color: #999999;
-    }
-
-.submit input {
+input:hover, textarea:hover, 
+input:focus, textarea:focus { 
+    border-color: #C9C9C9; 
+    } 
+   
+.form label { 
+    margin-left: 10px; 
+    color: #999999; 
+    } 
+   
+.request input { 
     padding: 10px;
-    margin-top: -500px;
-    margin-left: 508px;
+    margin-left: 807px;
     border-radius: 2px;
     width: auto;
     background: #617798;
@@ -361,6 +471,23 @@ input:focus, textarea:focus {
     font-size: 14px;
     color: #FFFFFF;
     }
+
+textarea {
+    margin: 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 9px;
+    border: solid 1px #E5E5E5; 
+    outline: 1px; 
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+    background: #FFFFFF; 
+    } 
+   
+textarea { 
+    width: 840px; 
+    height: 90px; 
+    line-height: 150%; 
+    } 
 
 /*input, textarea {
     margin-left: 15px;
