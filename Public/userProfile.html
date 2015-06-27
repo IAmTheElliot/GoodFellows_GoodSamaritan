@@ -13,43 +13,73 @@
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body id="Newuser">
-    <div id="header">
-      <div id="navbar">
-        <h2>goodSam<h2>
-        <a id='log-out' href='index.html'><span>Log-out</span></a>
+
+  <body id="Userprofile">
+
+  <header>
+    <h2>goodSam<h2>
+    <nav id="navbar">
+      <ul>
+        <li><a href='Newuser.html'>Create Account</a></li>
+        <li><a href='index.html'>Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <container class="welcome" class="container_12 clearfix" class="userinfo">
+      <p id="first-name"></p>
+  </container>
+
+   <container><span class="new-request">
+    <form id="new-request-form">
+      <textarea id="request-text" name="text" placeholder="What do you need help with?">
+      </textarea>
+      <div id="new-request-submit">
+        <p id="request-error"></p>
+        <input id="new-request-button" type="submit" value="Submit help request" class="request">
       </div>
-    </div>
-    <section class="container_12 clearfix">
-      <section>
-        <div class="userinfo">
-          <h1 id="first-name"></h1>
-        </div>
-      </section>
-        <form id="new-request-form" class="form">
-        <div class="text">
-          <textarea id="request-text" name="text" placeholder="What do you need help with?"></textarea>
-          <p id="request-message"></p>
-        </div>
-        <div class="request">
-          <input id="new-request-button" type="submit" value="Request">
-        </div>
-      </form>
-      <section class="feed">
-        <h2 class="feed-title">Your Requests</h2>
-        <div id="user-feed"></div>
-        <h2 class="feed-title">Respond To A Request</h2>
-        <div id="main-feed"></div>
-      </section>
-      <section class="contact-info">
-        <h2>Requestor Contact Information</h2>
-        <div id="allrequest">
-          <p id="requestor-name"></p>
-          <p id="requestor-email"></p>
-          <p id="requestor-phone"></p>
-          <p id="requestor-location"></p>
-        </div>
-      </section>
+    </form></span>
+  </container>
+
+
+
+
+  <container id="feed-container">
+    <hr/>
+
+    <section id="user-info">
+      <h3>Profile Info:</h3>
+      <p id="user-name"></p>
+      <p id="user-email"></p>
+      <p id="user-phone"></p>
+      <p id="user-address"></p>
+
     </section>
+
+    <section id="feed-data">
+      <h3 class="feed-title">Your Requests</h3>
+      <div id="user-feed"></div>
+      <h3 class="feed-title">Respond To A Request</h3>
+      <div id="main-feed"></div>
+    </section>
+
+    <section id="contact-info" class="menu">
+      <h3>Requestor Info:</h3>
+      <div id="allrequest">
+        <p id="requestor-name"></p>
+        <p id="requestor-email"></p>
+        <p id="requestor-phone"></p>
+        <p id="requestor-location"></p>
+    </section>
+
+
+  </container>
+
+
+
+
+
+
+  <footer></footer>
   </body>
 </html>
