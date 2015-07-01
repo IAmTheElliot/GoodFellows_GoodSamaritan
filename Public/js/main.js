@@ -12,6 +12,10 @@ $(function() {
   // Renders fetched user data to the page
   goodSam.prototype.renderUser = function() {
     $("#first-name").text("Welcome, " + userData.firstName + "!");
+    $("#user-name").text(userData.firstName + " " + userData.lastName);
+    $("#user-email").text(userData.email);
+    $("#user-phone").text(userData.phoneNumber);
+    $("#user-address").text(userData.city + ", " + userData.state + " " + userData.zip);
   };
 
   // Renders info from requests fetched from the database to separate feeds on the page
@@ -27,7 +31,7 @@ $(function() {
       // Renders user's own requests to the user feed
       if (userKey === userData.key) {
         $("#user-feed").prepend("<p class=" + requestKey + ">" + requestDescription +
-          "</p><button id=" + requestKey + " class=" + requestKey + ">Deactivate</button>" + "<hr/>");
+          "</p><button id=" + requestKey + " class='deactivateButton " + requestKey + "'>Deactivate</button>" + "<hr class=" + requestKey + ">");
 
         // Event listener for a user to deactivate requests
         $('#' + requestKey).on('click', function() {
@@ -41,7 +45,7 @@ $(function() {
         userRef.on("value", function(userSnapshot) {
           $("#main-feed").prepend("<h4 class=" + requestKey + ">" + userSnapshot.val().firstName + " " + userSnapshot.val().lastName +
             "</h4><p class=" + requestKey + ">" + requestDescription +
-            "</p><button id=" + requestKey + " class=" + requestKey + ">Respond</button>" + "<hr/>");
+            "</p><button id=" + requestKey + " class='respondButton " + requestKey + "'>Respond</button>" + "<hr/>");
 
           // Event listener for a user to respond to a request
           $('#' + requestKey).on('click', function() {
@@ -106,7 +110,9 @@ $(function() {
 
   // Deactivates a user request
   goodSam.prototype.deactivateRequest = function(ref, key) {
+    console.log('hr. ' + key);
     ref.child(key).update({ isActive: false });
+    $(('hr.' + key)).remove()
   };
 
   // Calls methods to render user and request info to the page
@@ -117,7 +123,7 @@ $(function() {
   $('#new-request-button').on('click', function(e) {
     if ($('#request-text').val() == "" ) {
       e.preventDefault();
-      $('#request-message').text("Please enter a request description!");
+      $('#request-error').text("Please enter your help request before submitting!");
     } else {
       e.preventDefault();
       app.createRequest();
@@ -126,13 +132,37 @@ $(function() {
 
   // Event listener to clear new request error message on text field focus
   $('#request-text').on('focus', function() {
-    $('#request-message').text("");
+    $('#request-error').text("");
   })
 
   // Event listener to clear user info from session storage upon logout
   $('#log-out').on('click', function() {
     sessionStorage.clear();
   });
+
+  // var menu = $("#contact-info");
+  var menu = document.querySelector('.menu');
+  var menuPosition = menu.getBoundingClientRect();
+  var placeholder = document.createElement('div');
+  placeholder.style.width = menuPosition.width + 'px';
+  placeholder.style.height = menuPosition.height + 'px';
+  var isAdded = false;
+
+  window.addEventListener('scroll', function() {
+      if (window.pageYOffset >= menuPosition.top && !isAdded) {
+          menu.classList.add('sticky');
+          menu.parentNode.insertBefore(placeholder, menu);
+          isAdded = true;
+          console.log(menuPosition);
+      } else if (window.pageYOffset < menuPosition.top && isAdded) {
+          menu.classList.remove('sticky');
+          menu.parentNode.removeChild(placeholder);
+          isAdded = false;
+      }
+  });
+
+
+
 
 });
 
